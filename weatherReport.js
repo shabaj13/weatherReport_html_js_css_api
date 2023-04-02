@@ -10,7 +10,7 @@ const feelslike = document.querySelector(".feelslike");
 const showContent = document.querySelector(".contentDiv");
 const container = document.querySelector(".container");
 const searchBtn = document.querySelector(".searchBtn");
-const image = document.querySelector(".image");
+
 
 let Apikey = `286989ffee38565d859afd4c5a148056`;
 let month, year, day;
@@ -101,11 +101,12 @@ function weatherDetails(info) {
       errorMsg.classList.add("hidden");
     }, 2000);
   } else {
-    setInterval(() => {
+    // setInterval(() => {
       const city = info.name;
       const country = info.sys.country;
       const { description, id } = info.weather[0];
-      const { feels_like, humidity, temp } = info.main;
+    const { feels_like, humidity, temp } = info.main;
+    // const IconPic = document.getElementById("IconPic");
 
       feelslike.innerHTML = "feels like:" + " " + Math.floor(feels_like);
       humi.innerHTML = `humidity: ${humidity}`;
@@ -114,22 +115,21 @@ function weatherDetails(info) {
       tempText.innerHTML = description;
       date.innerHTML = `${month},${day} ${year}`;
       
-      // if (id >= 801 && id == 804) {
-      //   image.scr="img/cloud.PNG" 
-      // } else if () {
-        
-      // }else if () {
-        
-      // }else if () {
-        
-      // }else if () {
-        
-      // }else if () {
-        
-      // }else() {
-        
+      // if (id >= "801" && id === "804") {
+      //   IconPic.src = "img/cloud-rain.PNG"
       // }
-
-    }, 100);
+      // if (id === "800") {
+      //   IconPic.scr = "img/sun.PNG"
+      // }
+      // if (id >= "500" && id === "531") {
+      //   IconPic.src = "img/cloud-rain.PNG"
+      // }
+      // if (id >= "200" && id === "232") {
+      //   IconPic.src = "img/cloud-thunder.PNG"
+      // }
+      // if (id >= "300" && id === "321") {
+      //   IconPic.src = "img/cloud-sun.PNG"
+      // }
+    // }, 100);
   }
 }
